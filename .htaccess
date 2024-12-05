@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Direkt erişilemeyen dosya ve klasörler
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # CodeIgniter index.php yönlendirme
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
